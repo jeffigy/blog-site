@@ -1,7 +1,6 @@
 import BlogList from 'components/BlogList';
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import useFetch from 'useFetch';
-
 function Home() {
   const title = 'Blog list'
   const { data, isLoading, error } = useFetch('http://localhost:8000/blogs')
