@@ -6,7 +6,7 @@ function Create() {
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('Juan');
     const [isPending, setIsPending] = useState(false);
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -19,8 +19,8 @@ function Create() {
         }).then(() => {
             console.log('new blog add');
             setIsPending(false);
-            // history.go(-1);
-            history('/');
+            // navigate.go(-1);
+            navigate('/');
         })
 
     };
