@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import {useNavigate} from 'react-router-dom'
 
 function Create() {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('Juan');
     const [isPending, setIsPending] = useState(false);
+    const history = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -17,7 +19,10 @@ function Create() {
         }).then(() => {
             console.log('new blog add');
             setIsPending(false);
+            // history.go(-1);
+            history('/');
         })
+
     };
     return (
         <div className="create">
